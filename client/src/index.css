@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark Academic / Biology Theme */
+  --background: 224 71% 4%;
+  --foreground: 210 40% 98%;
+  
+  --card: 224 71% 4%;
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 224 71% 4%;
+  --popover-foreground: 210 40% 98%;
+  
+  --primary: 142 71% 45%; /* Biology Green */
+  --primary-foreground: 144 100% 10%;
+  
+  --secondary: 217 19% 27%;
+  --secondary-foreground: 210 40% 98%;
+  
+  --muted: 217 19% 27%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 262 83% 58%; /* DNA Helix Purple Accent */
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --border: 217 19% 27%;
+  --input: 217 19% 27%;
+  --ring: 142 71% 45%;
+
+  /* DNA Base Colors (Neon) */
+  --dna-a: 142 76% 55%; /* Adenine - Green */
+  --dna-c: 217 91% 60%; /* Cytosine - Blue */
+  --dna-g: 48 96% 53%;  /* Guanine - Yellow */
+  --dna-t: 0 91% 71%;   /* Thymine - Red */
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(74, 222, 128, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(96, 165, 250, 0.05) 0%, transparent 50%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/5 hover:bg-white/10 transition-colors duration-300;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+  }
+
+  .text-glow-blue {
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+  }
+
+  .neon-border {
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.2), inset 0 0 10px rgba(74, 222, 128, 0.1);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground;
+}
