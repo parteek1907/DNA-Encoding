@@ -126,7 +126,7 @@ dna-encoding/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/dna-encoding.git
+git clone https://github.com/parteek1907/dna-encoding.git
 cd dna-encoding
 
 # 2. Install all dependencies
